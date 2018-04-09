@@ -1681,12 +1681,12 @@ install_de_wm() {
              ;;
         "6") # KDE4 BASE
              clear
-             pacstrap ${MOUNTPOINT} kdebase-workspace kdeplasma-applets-plasma-nm xdg-utils rp-pppoe 2>/tmp/.errlog
+             pacstrap ${MOUNTPOINT} kdebase plasma xdg-utils rp-pppoe 2>/tmp/.errlog
              KDE_INSTALLED=1
              ;;
         "7") # KDE4 
              clear
-             pacstrap ${MOUNTPOINT} kde kdeplasma-applets-plasma-nm xdg-user-dirs xdg-utils rp-pppoe 2>/tmp/.errlog
+             pacstrap ${MOUNTPOINT} kdebase plasma kde-applications xdg-utils rp-pppoe 2>/tmp/.errlog
 
              if [[ $NM_INSTALLED -eq 0 ]]; then          
                 arch_chroot "systemctl enable NetworkManager.service && systemctl enable NetworkManager-dispatcher.service" 2>>/tmp/.errlog
